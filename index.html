@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samatha's Portfolio</title>
+
+    <!-- External Styles & Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Poppins', 'sans-serif'],
+            },
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 1000,
+        once: true,
+    });
+    </script>
+
+    <!-- Local Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-white font-sans">
+    
+    <!-- Header -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 bg-gradient-to-r from-purple-500 to-blue-500 text-white z-50 shadow transition-all">
+      <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+        <h1 class="text-xl font-bold">Samatha</h1>
+        <nav class="hidden md:flex space-x-8 text-sm md:text-base">
+            <a href="#home" class="hover:text-[var(--theme-color)]">Home</a>
+            <a href="#about" class="hover:text-[var(--theme-color)]">About</a>
+            <a href="#skills" class="hover:text-[var(--theme-color)]">Skills</a> <!-- Added -->
+            <a href="#education" class="hover:text-[var(--theme-color)]">Education</a>
+            <a href="#projects" class="hover:text-[var(--theme-color)]">Projects</a>
+            <a href="#contact" class="hover:text-[var(--theme-color)]">Contact</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <input type="color" id="theme-picker" title="Pick Theme Color" class="w-6 h-6 rounded-full cursor-pointer border-2 border-white p-0" />
+          <button id="toggle-theme" class="text-xl focus:outline-none transition-transform duration-300 hover:rotate-180">🌙</button>
+          <button id="menu-btn" class="md:hidden text-2xl p-2 rounded-full hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-[var(--theme-color)] transition transform hover:scale-110 duration-300">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden flex-col bg-white/40 dark:bg-gray-800/40 backdrop-blur-md text-black dark:text-white px-6 py-6 text-lg font-medium shadow-lg rounded-md transition-all duration-500 absolute top-20 right-4 left-4 z-40">
+      <div class="flex justify-between items-center mb-4">
+        <button id="close-menu" class="text-lg px-2 py-1 rounded-full hover:bg-purple-100 dark:hover:bg-purple-900 hover:text-[var(--theme-color)] transition transform hover:scale-110 duration-300">✖</button>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6">
+        <a href="#home"><strong>Home</strong></a>
+        <a href="#about"><strong>About</strong></a>
+        <a href="#skills"><strong>Skills</strong></a> <!-- Added -->
+        <a href="#education"><strong>Education</strong></a>
+        <a href="#projects"><strong>Projects</strong></a>
+        <a href="#contact"><strong>Contact</strong></a>
+      </div>
+
+    </div>
+
+    <!-- Hero -->
+    <!-- Hero -->
+<section id="home" class="pt-28 pb-20 text-center bg-gradient-to-br from-gray-100 via-gray-200 to-gray-100 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 px-4" data-aos="fade-down">
+  <h2 class="text-4xl font-bold mb-2 text-gray-800 dark:text-white">
+    Hi, I'm <span id="typed" class="typed-highlight font-bold"></span>
+  </h2>
+  <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">A passionate web developer and ML enthusiast.</p>
+
+  <!-- Download CV Button -->
+  <a href="assets/Samatha_Resume.pdf" download
+     class="inline-block bg-[var(--theme-color)] hover:bg-purple-200 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-300 shadow-md">
+    <i class="fas fa-download mr-2"></i>Download CV
+  </a>
+</section>
+
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-900 px-4" data-aos="fade-up">
+    <div class="about-card text-center">
+        <h2 class="text-3xl font-bold mb-6 typed-highlight">
+        <span id="typed-about" class="typed-highlight"></span>
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">
+        I am <strong>Vecha Samatha</strong>, an undergraduate student pursuing a Bachelor of Technology in Artificial Intelligence and Machine Learning at Shri Vishnu Engineering College for Women.
+
+        I am passionate about <em>web development</em> and <em>data science</em>, and I enjoy working on projects that combine machine learning with real-world applications.
+
+        I have experience building full-stack web apps using React, Firebase, and Python, and I love solving problems using data analysis and visualization.
+
+        I am hardworking, a quick learner, and always eager to improve my skills and contribute to meaningful projects.
+        </p>
+
+    </div>
+    </section>
+
+    <!-- Skills -->
+
+<!-- Skills Carousel Section -->
+<section id="skills" class="py-20 bg-white dark:bg-gray-900">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-10 typed-highlight">My Tech Stack</h2>
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper items-center">
+        <!-- Python -->
+        <div class="swiper-slide flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="w-20 h-20" />
+          <p class="mt-2 text-center text-sm font-medium">Python</p>
+        </div>
+
+        <!-- Java -->
+        <div class="swiper-slide flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="w-20 h-20" />
+          <p class="mt-2 text-center text-sm font-medium">Java</p>
+        </div>
+
+        <!-- React -->
+        <div class="swiper-slide flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" class="w-20 h-20" />
+          <p class="mt-2 text-center text-sm font-medium">React</p>
+        </div>
+
+        <!-- VS Code -->
+        <div class="swiper-slide flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="w-20 h-20" />
+          <p class="mt-2 text-center text-sm font-medium">VS Code</p>
+        </div>
+
+        <!-- Git -->
+        <div class="swiper-slide flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="w-20 h-20" />
+          <p class="mt-2 text-center text-sm font-medium">Git</p>
+        </div>
+
+        <!-- MySQL -->
+        <div class="swiper-slide flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="w-20 h-20" />
+          <p class="mt-2 text-center text-sm font-medium">MySQL</p>
+        </div>
+
+        <!-- Firebase -->
+        <div class="swiper-slide flex flex-col items-center">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" class="w-20 h-20" />
+          <p class="mt-2 text-center text-sm font-medium">Firebase</p>
+        </div>
+
+        <!-- Tableau -->
+        <div class="swiper-slide flex flex-col items-center">
+          <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau" class="w-20 h-20" />
+          <p class="mt-2 text-center text-sm font-medium">Tableau</p>
+        </div>
+
+        <!-- Machine Learning -->
+        <div class="swiper-slide flex flex-col items-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/2965/2965879.png" alt="Machine Learning" class="w-20 h-20" />
+          <p class="mt-2 text-center text-sm font-medium">Machine Learning</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Education -->
+    <section id="education" class="relative py-16 bg-gray-50 dark:bg-gray-900">
+      <h2 class="text-center text-4xl font-bold typed-highlight mb-16">Education</h2>
+      <svg id="timeline-path" class="absolute left-1/2 transform -translate-x-1/2 z-0 h-full" width="100" height="100%" viewBox="0 0 100 1600" preserveAspectRatio="none">
+        <path d="M50,0 C30,100 70,200 50,300 C30,400 70,500 50,600 C30,700 70,800 50,900 C30,1000 70,1100 50,1200 C30,1300 70,1400 50,1600" id="timeline-stroke" stroke="#9333ea" stroke-width="8" fill="none"/>
+      </svg>
+      <div class="relative z-10 max-w-3xl mx-auto space-y-24">
+        <div class="flex justify-start" data-aos="fade-up" data-aos-delay="100">
+          <div class="education-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg w-11/12 sm:w-2/3">
+            <h3 class="font-bold text-xl text-gray-800 dark:text-white">2022 - 2026</h3>
+            <p class="edu-institute font-semibold">Shri Vishnu Engineering College for Women</p>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Specialized in AIML. Active in clubs, tech fests, and built real-world projects.</p>
+          </div>
+        </div>
+        <div class="flex justify-end" data-aos="fade-up" data-aos-delay="300">
+          <div class="education-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg w-11/12 sm:w-2/3">
+            <h3 class="font-bold text-xl text-gray-800 dark:text-white">2020 - 2022</h3>
+            <p class="edu-institute font-semibold">Tirumala Junior College</p>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Focused on MPC stream. Strong foundation in Math and CS.</p>
+          </div>
+        </div>
+        <div class="flex justify-start" data-aos="fade-up" data-aos-delay="500">
+          <div class="education-card bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg w-11/12 sm:w-2/3">
+            <h3 class="font-bold text-xl text-gray-800 dark:text-white">2019 - 2020</h3>
+            <p class="edu-institute font-semibold">Tirumala EM High School</p>
+            <p class="text-gray-600 dark:text-gray-300 mt-2">Scored 600/600 in SSC Board. Strong base in math & science.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Projects -->
+<section id="projects" class="py-20 bg-gray-50 dark:bg-gray-800 px-4" data-aos="fade-up">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-10 text-center typed-highlight">
+      <span id="typed-projects" class="typed-highlight"></span>
+    </h2>
+
+    <!-- Initial Projects -->
+    <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 justify-items-center">
+      <!-- Farmer Buddy -->
+      <div class="relative group overflow-hidden rounded-lg shadow-lg bg-white dark:bg-gray-700 border-2 border-transparent hover:border-[var(--theme-color)] project-card">
+        <img src="images/Farmerbuddy.png" alt="Farmer Buddy"
+          class="transition-opacity duration-500 ease-in-out group-hover:opacity-0 rounded-lg" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col items-center justify-center text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-lg project-overlay">
+        <h3 class="group-hover:text-[var(--theme-color)] text-xl font-bold mb-2">Farmer Buddy</h3>
+        <p class="text-center mb-4">Smart ML assistant recommending crops & fertilizers. Built with Flask + React.</p>
+
+        <!-- Buttons -->
+
+    </div>
+
+      </div>
+
+      <!-- To-Do List -->
+      <div class="relative group overflow-hidden rounded-lg shadow-lg bg-white dark:bg-gray-700 border-2 border-transparent hover:border-[var(--theme-color)] project-card">
+        <img src="images/todo_img.jpg" alt="To-Do List App"
+          class="transition-opacity duration-500 ease-in-out group-hover:opacity-0 rounded-lg" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col items-center justify-center text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500  rounded-lg project-overlay">
+          <h3 class="group-hover:text-[var(--theme-color)] text-xl font-bold mb-2">To-Do List App</h3>
+          <p>Responsive task management app using React and Firebase, deployed on Vercel & Render.</p>
+          <!-- Buttons -->
+        <div class="flex gap-4">
+            <!-- GitHub -->
+            <a href="https://github.com/Samatha-Vecha/todolist-backend" target="_blank"
+            class="flex items-center justify-center w-10 h-10 bg-white text-black font-semibold rounded hover:bg-gray-200 transition">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                d="M12 0a12 12 0 00-3.79 23.4c.6.1.82-.26.82-.58v-2.17c-3.34.73-4.04-1.6-4.04-1.6-.55-1.38-1.34-1.75-1.34-1.75-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.84 2.83 1.31 3.52 1 .1-.78.42-1.31.77-1.61-2.67-.3-5.47-1.34-5.47-5.96 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23A11.5 11.5 0 0112 6.8c1.02.005 2.04.14 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.67 1.65.26 2.87.13 3.17.77.84 1.24 1.9 1.24 3.22 0 4.63-2.8 5.66-5.48 5.95.43.37.81 1.1.81 2.23v3.3c0 .32.22.69.82.57A12 12 0 0012 0z" />
+            </svg>
+            </a>
+
+
+            <!-- View Demo -->
+            <a href="https://todolist-frontend-vnpy.vercel.app/" target="_blank"
+            class="px-4 py-2 bg-[var(--theme-color)] text-white font-semibold rounded hover:bg-purple-700 transition">
+            View Demo
+            </a>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Projects -->
+    <div id="more-projects" class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 justify-items-center mt-10 hidden">
+      
+      <!-- HR Analytics Dashboard -->
+      <div class="relative group overflow-hidden rounded-lg shadow-lg bg-white dark:bg-gray-700 border-2 border-transparent hover:border-[var(--theme-color)] project-card">
+        <img src="images/HR_Dashboard.png" alt="HR Analytics Dashboard"
+          class="transition-opacity duration-500 ease-in-out group-hover:opacity-0 rounded-lg" />
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-lg project-overlay">
+          <h3 class="text-xl font-bold mb-2 group-hover:text-[var(--theme-color)] transition-colors duration-300">
+            HR Analytics Dashboard</h3>
+          <p>Interactive Tableau dashboard for HR performance insights using IBM dataset.</p>
+        </div>
+      </div>
+      <!-- Image Captioning Project -->
+      <div class="relative group overflow-hidden rounded-lg shadow-lg bg-white dark:bg-gray-700 border-2 border-transparent hover:border-[var(--theme-color)] project-card">
+        <img src="images/image_captioning.jpg" alt="Image Captioning Deep Learning"
+          class="transition-opacity duration-500 ease-in-out group-hover:opacity-0 rounded-lg" />
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-lg project-overlay">
+          <h3 class="text-xl font-bold mb-2 group-hover:text-[var(--theme-color)] transition-colors duration-300">
+            Image Captioning using Deep Learning</h3>
+          <p>End-to-end model using CNN and LSTM to generate image descriptions trained on Flickr8k dataset.</p>
+        </div>
+      </div>
+
+      <!-- Text Summarizer App -->
+      <div class="relative group overflow-hidden rounded-lg shadow-lg bg-white dark:bg-gray-700 border-2 border-transparent hover:border-[var(--theme-color)] project-card">
+        <img src="images/Textsummarizer.webp" alt="Text Summarizer"
+          class="transition-opacity duration-500 ease-in-out group-hover:opacity-0 rounded-lg" />
+        <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-white p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300  rounded-lg project-overlay">
+          <h3 class="text-xl font-bold mb-2 group-hover:text-[var(--theme-color)] transition-colors duration-300">
+            Text Summarizer</h3>
+          <p>AI-powered text summarizer built using NLP and Streamlit for fast and efficient content summarization.</p>
+          <!-- Buttons -->
+        <div class="flex gap-4">
+            <!-- GitHub -->
+            <a href="https://github.com/Samatha-Vecha/text-summarizer" target="_blank"
+            class="flex items-center justify-center w-10 h-10 bg-white text-black font-semibold rounded hover:bg-gray-200 transition">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                d="M12 0a12 12 0 00-3.79 23.4c.6.1.82-.26.82-.58v-2.17c-3.34.73-4.04-1.6-4.04-1.6-.55-1.38-1.34-1.75-1.34-1.75-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.84 2.83 1.31 3.52 1 .1-.78.42-1.31.77-1.61-2.67-.3-5.47-1.34-5.47-5.96 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1-.32 3.3 1.23A11.5 11.5 0 0112 6.8c1.02.005 2.04.14 3 .4 2.28-1.55 3.28-1.23 3.28-1.23.67 1.65.26 2.87.13 3.17.77.84 1.24 1.9 1.24 3.22 0 4.63-2.8 5.66-5.48 5.95.43.37.81 1.1.81 2.23v3.3c0 .32.22.69.82.57A12 12 0 0012 0z" />
+            </svg>
+            </a>
+
+
+            <!-- View Demo -->
+            <a href="https://text-summarizer-jxnzf74f66tj9puwdgpwro.streamlit.app/" target="_blank"
+            class="px-4 py-2 bg-[var(--theme-color)] text-white font-semibold rounded hover:bg-purple-700 transition">
+            View Demo
+            </a>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Button -->
+    <div class="text-center mt-10">
+      <button id="view-more-btn"
+        class="px-6 py-3 bg-[var(--theme-color)] text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors duration-300">
+        View More
+      </button>
+    </div>
+  </div>
+</section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-900 px-4" data-aos="fade-up">
+      <div class="max-w-xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-4 typed-highlight"><span id="typed-contact" class="typed-highlight"></span></h2>
+        <p class="mb-4">Let's connect! Email me at <a href="mailto:samatha9104@gmail.com" class="underline text-[var(--theme-color)]">samatha9104@gmail.com</a></p>
+        <div class="flex justify-center space-x-8 text-2xl">
+          <a href="https://github.com/Samatha-Vecha" target="_blank" class="hover:text-[var(--theme-color)]"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/samatha-vecha-090234259/" target="_blank" class="hover:text-[var(--theme-color)]"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+<footer id="footer" class="relative text-center py-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-inner shadow-blue-400/40 transition-all">
+  <p>&copy; 2025 Samatha. All rights reserved.</p>
+
+  <!-- Scroll to Top Button -->
+  <button onclick="scrollToTop()" 
+    class="absolute right-5 top-1/2 transform -translate-y-1/2 bg-white text-[var(--theme-color)] hover:bg-[var(--theme-color)] hover:text-white transition-colors duration-300 rounded-full p-2 shadow-lg">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+</footer>
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
