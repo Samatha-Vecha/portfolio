@@ -1,5 +1,6 @@
 AOS.init({ once: true, duration: 1000 });
 
+
 new Typed('#typed', {
   strings: ['Samatha', 'a Developer', 'an ML Enthusiast'],
   typeSpeed: 70,
